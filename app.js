@@ -7,17 +7,14 @@ app.use(express.static("public"));
 app.use(express.static("JS"));
  
 app.get('/', function (req, res) {
-    var findUser = "SELECT * FROM `Employee`"
-    connection.query(findUser, function (err, foundUser) {
-        if (err) {
-        throw err;
-        }
-        console.log(foundUser);
-        res.render("login", {
-        user: foundUser[0]
-        });
-    });
- })
+        res.render("login");
+        })
+
+ app.get('/home', function (req, res) {
+    res.render("home");
+    })
+
+
 
 
  
