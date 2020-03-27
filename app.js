@@ -10,14 +10,21 @@ app.get('/', function (req, res) {
         res.render("login");
         })
 
- app.get('/home', function (req, res) {
+app.get('/home', function (req, res) {
     res.render("home");
     })
 
-
-
+app.get('/cinema', function (req, res) {
+    res.render("cinema");
+    })
+app.get('/movie', function (req, res) {
+    res.render("cinema");
+    })
 
  
 var server = app.listen(3000,function(){
  console.log("We have started our server on port 3000");
 });
+
+
+
