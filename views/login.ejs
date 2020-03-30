@@ -49,6 +49,13 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      var error = <%= error %>;
+      if(error==1)
+      {
+        alert('Wrong email or pass');
+      }
+      </script>
   </head>
   <body style="background-color: black;">
     <div class="row" style="height: 100%">
@@ -57,6 +64,7 @@
         style="background-image: url('https://sv1.picz.in.th/images/2020/03/27/QA26ev.jpg'); background-repeat: no-repeat;background-size: 100%;"
       ></div>
       <div class="col-sm-8" style="margin: auto;">
+        <form action="/login" method="POST">
         <div style="width: 100%;">
           <div class="row">
             <div class="col-sm-4"></div>
@@ -67,16 +75,17 @@
           </div>
           <div class="row" style="margin-top: 30px;">
             <div class="col-sm-4" style="text-align: end;">
-              <label for="id_usrname" style="color: white;">Username</label>
+              <label for="id_usrname" style="color: white;">Email</label>
             </div>
             <div class="col-sm-4">
               <input
                 class="login_input"
                 id="id_username"
-                name="username"
+                name="email"
                 type="text"
                 placeholder=""
                 style="width:100%;"
+                required
               />
             </div>
             <div class="col-sm-4"></div>
@@ -89,10 +98,11 @@
               <input
                 class="login_input"
                 id="id_password"
-                name="password"
+                name="pass"
                 type="password"
                 placeholder=""
                 style="width:100%"
+                required
               />
             </div>
             <div class="col-sm-4"></div>
@@ -114,7 +124,8 @@
             <div class="col-sm-4"></div>
           </div>
         </div>
+      </form>
       </div>
     </div>
   </body>
-</html>...
+</html>
