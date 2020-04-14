@@ -6,7 +6,7 @@ router.get('/login', function (req, res) {
     res.render("login",{error:''});
     })
 
-//handling user sign in
+//handling user sign in กดlogin check db 
 router.post("/login", function (req, res) {
     var email = req.body.email;
     var password = req.body.pass;
