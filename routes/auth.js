@@ -15,6 +15,7 @@ router.post("/login", function (req, res) {
             console.log(results);
             if (results.length > 0) {
                 req.session.email = email;
+                req.session.firstname = results[0].firstName;
                 //req.flash("success","welcome to yelp camp" + req.session.username);
                 res.redirect('/');
             } else {
@@ -35,7 +36,49 @@ router.get("/logout", function (req, res) {
 });
 
 router.get('/regis', function (req, res) {
-    res.render("register");
+    var check_email = "SELECT email FROM Member ";
+    connection.query(check_email, function (err, foundEmail) {
+        if (err) {
+            throw err;
+        } else {
+            res.render("register",{emails:foundEmail});
+        }
     })
+})
+
+router.post("/regis", function (req, res) {
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var citizen_id = req.body.citizen_id;
+    var phone = req.body.phonenumber;
+    var email = req.body.email;
+    var password = req.body.password;
+    var DOBDay = req.body.DOBDay;
+    var DOBMonth = req.body.DOBMonth;
+    var DOBYear = req.body.DOBYear;
+    var gender = req.body.gender;
+    // console.log(firstname);
+    // console.log(lastname);
+    // console.log(citizen_id);
+    // console.log(phone);
+    // console.log(email);
+    // console.log(password);
+    // console.log(DOBDay);
+    // console.log(DOBYear);
+     console.log(DOBMonth);
+
+
+    var sql = "INSERT INTO Member(firstName,lastName,gender,citizenID,phone,email,password,dd,mm,yyyy) values ('" + firstname + "','" + lastname + "','" + gender + "','" + citizen_id + "','" + phone + "','" + email + "','" + password + "','" + DOBDay + "','" + DOBMonth + "','" + DOBYear + "')";
+    connection.query(sql, function (err, result) {
+        if (err) {
+            throw err;
+        } else {
+            console.log("Insert Complete");
+            req.session.email = email;
+            req.session.firstname = firstname;1
+            res.redirect("/");
+        }
+    })
+})
 
 module.exports = router;

@@ -45,10 +45,10 @@
           <li class = "nav-item"><a href="/cinema" class="nav-link ">Cinema<span class="sr-only">(current)</span></a></li>
           <li class = "nav-item"><a href="/movie" class="nav-link">Movies</a></li>
           <li class = "nav-item"><a href="/promotion" class="nav-link">Promotion</a></li>
-          <% if(!currentUser){ %>
+          <% if(!currentUser_email){ %>
           <li class = "nav-item"><a href="/login" class="nav-link"><span>Login/Sign up</span></a></li>
           <% }else{ %>
-            <li class = "nav-item"><a href="#" class="nav-link"><%= currentUser %></a></li>
+            <li class = "nav-item"><a href="#" class="nav-link">Welcome <%= currentUser_firstName %></a></li>
             <li class = "nav-item"><a href="/logout" class="nav-link">logout</a></li>
         <% } %>
         </ul>

@@ -16,6 +16,7 @@ var movie = require("./routes/movie");
 
 
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static("public"));
@@ -30,7 +31,8 @@ app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 
 app.use(function(req,res,next){
-    res.locals.currentUser = req.session.email;
+    res.locals.currentUser_email = req.session.email;
+    res.locals.currentUser_firstName = req.session.firstname;
     next();
     })
 
@@ -40,6 +42,9 @@ app.use("/",auth);
 app.use("/", promotion);
 app.use("/", cinema);
 app.use("/", movie);
+
+
+
 app.use(express.static(__dirname + '/views'));
 
 
