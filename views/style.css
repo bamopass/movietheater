@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Days+One');
+
+body {
+    font-family: 'Poppins';
+    letter-spacing: 1.5px;
+    background-color: #13161F;
+}
+
+/*---------------------
+    navbar section
+-----------------------*/
+
+.container-fluid {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.navbar-toggler {
+    line-height: 1;
+    font-size: 12px; letter-spacing: 2px;
+    border-radius: 1rem;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.4em;
+    vertical-align: middle; 
+}
+
+/*---------------------
+    search section
+-----------------------*/
+
+
+.col-5 {
+    padding-left: 30px;
+   
+}
+
+.bootstrap-select, .dropdown-toggle {
+    border-radius: 3px;
+    font-size: 14px; letter-spacing: 1px;
+    padding: 6px 0 6px 3px;
+}
+.opt-style {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.dropdown-item.active, .dropdown-item:active{
+	background: #00D4F1;
+}
+.btn-showtime {
+    background-color: #00D4F1; 
+    border: none;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: -27px;
+    margin-top: 6px;
+    padding: 6px;
+    font-size: 12px; letter-spacing: 1px; font-weight: bold;
+    width: 90px;
+}
+.search {
+    padding: 7px; 
+    width: 150%;
+    margin-left: 50px;
+}
+.search input[type=text]{
+    letter-spacing: 1px;
+    font-size: 13px;
+    color:  #00D4F1;
+    border-radius: 15px;
+    padding: 12px;
+}
+input[type=text]:focus:not([readonly]) {
+    border: 2px solid #4dd0e1; 
+}
+.fa-search {
+    color: #4dd0e1;
+    margin-left: -40px;
+}
+
+/*---------------------
+        carousel
+-----------------------*/
+.poster-carousel {
+    position: absolute;
+    top: 70px;
+    left: 170px;
+    max-width: 20%;
+    border-radius: 10px;
+}
+.cover-carousel {
+    filter: brightness(50%);
+    z-index: -1;
+      
+}
+.title-carousel {
+    color: white;
+    font-family: Days One;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    z-index: 1;
+}
+.info-carousel {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 28%;
+    left: 37%;
+    right:20%;
+    z-index: 1;
+}
+.btn-buy {
+    background-color: #00D4F1; 
+    border: none;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 12px 24px;
+    position: absolute;
+    bottom: 48%;
+    left: 37%;
+
+}
+.btn-buy a:hover {
+    text-decoration: none;
+    color: white;
+
+}
+p {
+    font-size: 10px;
+}
+
+/*---------------------
+        Movies
+-----------------------*/
+.mv-row {
+    padding: 20px 30px 0 20px;
+    border-bottom: .5px solid #ccc;
+}
+h4 {
+    color: white;
+}
+
+.movies h5 {
+    font-weight: bold;
+}
+
+
+
+.movies .nav-link {
+    padding: 1rem .6rem;
+    font-size: 13px;
+    color: white;
+}
+
+.movies .nav-link:hover {
+    color: #4dd0e1;
+}
+
+.movies .nav-link.active {
+    font-weight: bolder;
+    position: relative;
+    color: #4dd0e1;
+}
+
+a.nav-link.active:after {
+    content: '';
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: #4dd0e1;
+}
+
+.movies .movies-list {
+    overflow-y: scroll;
+    margin-top: 20px
+}
+
+.movies .movies-list article {
+    display: none;
+}
+
+.movies .movies-list article.active {
+    display: block;
+}
+
+.movies-list .movie {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.movies-list .movie .poster {
+    width: 100%;
+    border-radius: 10px;
+}
+.movies-list .movie .title {
+    padding-top: 13px;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+}
+.movies-list .movie .info {
+    padding-top: 3px;
+    font-size: 10px;
+    color: #ccc;
+    font-weight: 2px;
+}
+.row-month {
+    height: 38px;  
+}
+.row-month2 {
+    height: 38px;
+    margin-top: 40px;
+}
+.vl {
+    border-right: 4px solid #4dd0e1;
+    height: 5px;
+    padding-left: 5px;
+}
+.month {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    padding-left: 7px;
+}

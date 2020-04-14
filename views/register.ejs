@@ -1,0 +1,411 @@
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .txtBlue {
+        color: #00d4f1;
+    }
+    .txtWhite {
+        color: white !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+    }
+    .form_margin {
+        margin-top: 20px;
+    }
+    input {
+        border-radius: 18px;
+        border: solid white 1px;
+        color: #00d4f1;
+        padding: 5px 10px 5px 10px;
+        background-color: transparent;
+        outline: 0 none;
+    }
+    .btn_selector {
+        border: solid white 1px !important;
+        border-radius: 18px !important;
+        text-align: center;
+        cursor: pointer;
+        padding: 2px 10px !important;
+        float: left;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .selected_gender {
+        border: solid #00d4f1 1px;
+        background-color: #00d4f1;
+    }
+
+    .selector_style {
+        color: white;
+        background-color: black;
+        padding: 20px;
+        outline: none;
+        border: 0px;
+    }
+
+    .save_btn {
+        background-color: transparent;
+        color: #00d4f1;
+        border: solid #00d4f1 2px;
+        border-radius: 25px;
+        font-size: 20px;
+        margin-right: 15px;
+        outline: none !important;
+    }
+
+    .save_btn:hover {
+        background-color: #00d4f1;
+        color: white;
+        border: solid #00d4f1 2px;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body style="background-color: black;">
+        <div class="container_content" style="margin: 80px 80px;">
+            <div style="margin-bottom: 25px;">
+                <span
+                    style="color: white;font-size: 4vw;font-weight: 600;border-bottom: solid #00d4f1 8px;letter-spacing: 5px;margin-left: 40px;"
+                >
+                    Register
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="margin:auto;">
+                    <div class="text-center">
+                        <img
+                            src="https://picsum.photos/200/200"
+                            alt=""
+                            style="width: 50%;border-radius: 300px;cursor: pointer;"
+                            onclick="uploadFile();"
+                            id="profile_image"
+                        />
+                        <input type="file" id="my_picture" style="display: none;" />
+                    </div>
+                    <div class="text-center">
+                        <span class="txtBlue" style="font-size: 25px;font-weight: 500;">
+                            EMPLOYEE ID:
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <span
+                            id="employee_id"
+                            style="font-size: 25px;font-weight: 500;color: white;"
+                        >
+                            EMP0000001
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-9" ">
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">First name</div>
+                    <div class="col-4">
+                        <input type="text" name="firstname" id="id_firstname" style="width: 80%;" />
+                    </div>
+                    <div class="col-2 txtWhite">Last name</div>
+                    <div class="col-4">
+                        <input type="text" name="lastname" id="id_lastname" style="width: 80%;" />
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Citizen ID</div>
+                    <div class="col-4">
+                        <input
+                            type="text"
+                            name="citizen_id"
+                            id="id_citizen_id"
+                            style="width: 80%;"
+                        />
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Phone Number</div>
+                    <div class="col-4">
+                        <input
+                            type="text"
+                            name="phonenumber"
+                            id="id_phonenumber"
+                            style="width: 80%;"
+                        />
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Username</div>
+                    <div class="col-4">
+                        <input type="text" name="username" id="id_username" style="width: 80%;" />
+                    </div>
+                    <div class="col-2 txtWhite">Password</div>
+                    <div class="col-4">
+                        <input
+                            type="password"
+                            name="password"
+                            id="id_password"
+                            style="width: 80%;"
+                        />
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Date of Birth</div>
+                    <div class="col-10">
+                        <div class="btn-group">
+                            <button
+                                type="button"
+                                class="btn dropdown-toggle txtWhite btn_selector"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                Day
+                            </button>
+                            <div
+                                class="dropdown-menu"
+                                id="id_day"
+                                style="overflow-y: scroll;max-height: 300px"
+                            ></div>
+                        </div>
+                        <div class="btn-group">
+                            <button
+                                type="button"
+                                class="btn dropdown-toggle txtWhite btn_selector"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                Month
+                            </button>
+                            <div
+                                class="dropdown-menu"
+                                id="id_month"
+                                style="overflow-y: scroll;max-height: 300px"
+                            ></div>
+                        </div>
+                        <div class="btn-group">
+                            <button
+                                type="button"
+                                class="btn dropdown-toggle txtWhite btn_selector"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                Year
+                            </button>
+                            <div
+                                class="dropdown-menu"
+                                id="id_year"
+                                style="overflow-y: scroll;max-height: 300px"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Gender</div>
+                    <div class="col-10">
+                        <div
+                            id="id_select_male"
+                            class="txtWhite btn_selector noselect"
+                            style="width: 85px;"
+                            onclick="selectGender('male')"
+                        >
+                            Male
+                        </div>
+                        <div
+                            id="id_select_female"
+                            class="txtWhite btn_selector noselect"
+                            style="width: 85px;"
+                            onclick="selectGender('female')"
+                        >
+                            Female
+                        </div>
+                    </div>
+                </div>
+                <div class="row form_margin">
+                    <div class="col-2 txtWhite">Position</div>
+                    <div class="col-4">
+                        <input type="text" name="position" id="id_position" style="width: 80%;" />
+                    </div>
+                    <div class="col-2 txtWhite">Branch</div>
+                    <div class="col-4">
+                        <input type="text" name="branch" id="id_branch" style="width: 80%;" />
+                    </div>
+                </div>
+                <div class="row form_margin" style="margin-top:75px">
+                    <div class="col-8 txtWhite"></div>
+                    <div class="col-4">
+                        <button
+                            class="noselect save_btn"
+                            style="float: left;width: 25%;margin-left:111px;"
+                        >
+                            EDIT
+                        </button>
+                        <button
+                            class="noselect save_btn"
+                            style="float: left;width: 25%;"
+                            onclick="saveForm();"
+                        >
+                            SAVE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function uploadFile() {
+        document.getElementById("my_picture").click();
+    }
+
+    function changeParentSelectorText(parent_id, text) {
+        document.getElementById(parent_id).parentNode.querySelector("button").innerText = text;
+    }
+
+    for (let i = 1; i <= 31; i++) {
+        const parent_id = "id_day";
+        let elem = document.createElement("a");
+        elem.text = i;
+        elem.className = "dropdown-item";
+        elem.onclick = function() {
+            changeParentSelectorText(parent_id, i);
+        };
+
+        // elem.value = i;
+        document.getElementById(parent_id).appendChild(elem);
+    }
+
+    let month = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    for (let i = 0; i < month.length; i++) {
+        const parent_id = "id_month";
+        let elem = document.createElement("a");
+        elem.text = month[i];
+        elem.className = "dropdown-item";
+        elem.onclick = function() {
+            changeParentSelectorText(parent_id, month[i]);
+        };
+        // elem.value = i;
+        document.getElementById(parent_id).appendChild(elem);
+    }
+
+    for (let i = 2020; i >= 1900; i--) {
+        const parent_id = "id_year";
+        let elem = document.createElement("a");
+        elem.text = i;
+        elem.className = "dropdown-item";
+        elem.onclick = function() {
+            changeParentSelectorText(parent_id, i);
+        };
+        // elem.value = i;
+        document.getElementById(parent_id).appendChild(elem);
+    }
+
+    function selectGender(gender) {
+        if (gender === "male") {
+            document.getElementById("id_select_male").classList.add("selected_gender");
+            document.getElementById("id_select_female").classList.remove("selected_gender");
+        } else if (gender === "female") {
+            document.getElementById("id_select_male").classList.remove("selected_gender");
+            document.getElementById("id_select_female").classList.add("selected_gender");
+        }
+    }
+
+    function saveForm() {
+        const first_name = document.getElementById("id_firstname").value;
+        const last_name = document.getElementById("id_lastname").value;
+        const citizen_id = document.getElementById("id_citizen_id").value;
+        const phonenumber = document.getElementById("id_phonenumber").value;
+        const user_name = document.getElementById("id_username").value;
+        const password = document.getElementById("id_password").value;
+        const position = document.getElementById("id_position").value;
+        const branch = document.getElementById("id_branch").value;
+
+        // dob
+        const day = document.getElementById("id_day").parentNode.querySelector("button").innerText;
+        const month = document.getElementById("id_month").parentNode.querySelector("button")
+            .innerText;
+        const year = document.getElementById("id_year").parentNode.querySelector("button")
+            .innerText;
+
+        const dob = day + " " + month + " " + year;
+
+        // gender
+        const male = document
+            .getElementById("id_select_male")
+            .classList.contains("selected_gender");
+        const female = document
+            .getElementById("id_select_female")
+            .classList.contains("selected_gender");
+
+        const gender_selected = male ? "m" : "f";
+
+        const my_image_path = document.getElementById("my_picture").value;
+        let form_obj = {
+            firstname: first_name,
+            lastname: last_name,
+            citizen_id: citizen_id,
+            phonenumber: phonenumber,
+            user_name: user_name,
+            password: password,
+            position: position,
+            branch: branch,
+            dob: dob,
+            gender: gender_selected,
+            my_image_path: my_image_path
+        };
+        console.log(form_obj);
+    }
+</script>

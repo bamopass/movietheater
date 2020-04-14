@@ -34,4 +34,8 @@ router.get("/logout", function (req, res) {
     res.redirect("/");
 });
 
+router.get('/regis', function (req, res) {
+    res.render("register");
+    })
+
 module.exports = router;
