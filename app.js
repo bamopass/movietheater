@@ -15,6 +15,7 @@ var cinema = require("./routes/cinema");
 var movie = require("./routes/movie");
 var welcomeadmin = require("./routes/welcomeadmin");
 var adminregis = require("./routes/adminregis");
+var manageAdmin = require("./routes/manageAdmin");
 
 
 
@@ -46,6 +47,8 @@ app.use("/", cinema);
 app.use("/", movie);
 app.use("/", welcomeadmin);
 app.use("/", adminregis);
+app.use("/", manageAdmin);
+
 
 
 
