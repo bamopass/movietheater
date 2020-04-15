@@ -14,6 +14,7 @@ var promotion = require("./routes/promotion");
 var cinema = require("./routes/cinema");
 var movie = require("./routes/movie");
 var welcomeadmin = require("./routes/welcomeadmin");
+var adminregis = require("./routes/adminregis");
 
 
 
@@ -44,6 +45,8 @@ app.use("/", promotion);
 app.use("/", cinema);
 app.use("/", movie);
 app.use("/", welcomeadmin);
+app.use("/", adminregis);
+
 
 
 
