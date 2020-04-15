@@ -12,7 +12,6 @@ router.post("/login", function (req, res) {
     var password = req.body.pass;
     if (email && password) {
         connection.query('SELECT * FROM Member WHERE email = ? AND password = ?', [email, password], function (error, results, fields) {
-            console.log(results);
             if (results.length > 0) {
                 req.session.email = email;
                 req.session.firstname = results[0].firstName;
@@ -57,16 +56,6 @@ router.post("/regis", function (req, res) {
     var DOBMonth = req.body.DOBMonth;
     var DOBYear = req.body.DOBYear;
     var gender = req.body.gender;
-    // console.log(firstname);
-    // console.log(lastname);
-    // console.log(citizen_id);
-    // console.log(phone);
-    // console.log(email);
-    // console.log(password);
-    // console.log(DOBDay);
-    // console.log(DOBYear);
-     console.log(DOBMonth);
-
 
     var sql = "INSERT INTO Member(firstName,lastName,gender,citizenID,phone,email,password,dd,mm,yyyy) values ('" + firstname + "','" + lastname + "','" + gender + "','" + citizen_id + "','" + phone + "','" + email + "','" + password + "','" + DOBDay + "','" + DOBMonth + "','" + DOBYear + "')";
     connection.query(sql, function (err, result) {

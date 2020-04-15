@@ -26,23 +26,11 @@ body {
     letter-spacing: 1.5px;
 }
 
-.navbar-toggler {
-    line-height: 1;
-    font-size: 12px; letter-spacing: 2px;
-    border-radius: 1rem;
-}
 
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.2em;
-    height: 1.4em;
-    vertical-align: middle; 
-}
 
 /*---------------------
     search section
 -----------------------*/
-
 
 .col-5 {
     padding-left: 30px;
@@ -167,8 +155,6 @@ h4 {
     font-weight: bold;
 }
 
-
-
 .movies .nav-link {
     padding: 1rem .6rem;
     font-size: 13px;
@@ -246,4 +232,128 @@ a.nav-link.active:after {
     font-weight: bold;
     font-size: 17px;
     padding-left: 7px;
+}
+
+.hide-left {
+    display: none;
+    position: absolute;
+    top: 5px;
+    padding: 20px 55px 20px 55px;
+    border-radius: 5px;
+    background-color: white;
+    width: 530px;
+    height: 95%;
+    font-size: 11px; 
+}
+.hide-left .row, .hide-right .row {
+    padding: 10px 0 10px 0px;
+}
+.show:hover .title {
+    color: #4dd0e1;
+    font-weight: bold;
+}
+.show:hover .info {
+    color: white;
+}
+
+.hide-right {
+    display: none;
+    position: absolute;
+    top: 5px;
+    padding: 20px 55px 20px 55px;
+    border-radius: 5px;
+    background-color: white;
+    width: 530px;
+    height: 95%;
+    font-size: 11px; 
+}
+.show:hover + .hide-left {
+    display: block;
+    left: 250px;
+    z-index: 1;
+}
+.show:hover +.hide-right {
+    display: block;
+    right: 250px;
+    z-index: 1;
+}
+.detail .row  {
+    border-bottom: .5px solid lightgrey;
+}
+.detail .theater {
+    background-color: #4dd0e1;
+    padding: 3px 15px 3px 15px;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-right: 10px;
+   
+}
+.detail .rating {
+    text-align: center;
+    
+}
+.spacial {
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    height: 30px;
+   
+}
+.detail p{
+    font-weight: bold;
+    font-size: 12px;
+}
+.row.plot {
+    height: 240px;
+}
+.row.date {
+    border-bottom: none;
+
+}
+.col.cdate {
+    left: -14px;
+    
+}
+
+/*---------------------
+        Cinema
+-----------------------*/
+.cinema {
+    margin: 0 25px 0 20px;
+    border-radius: 3px;
+    background-color: white;
+    padding: 30px 80px 30px 80px;
+}
+.area {
+    border-bottom: 1px solid black;
+    height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.branch {
+    padding: 5px 50px 5px 50px;  
+}
+.logo {
+    height: 90px;
+    float: left;
+    cursor: pointer;
+}
+.b-info {
+   padding-top: 20px;
+   cursor: pointer;
+   border: none;
+   text-align: left;
+}
+.b-info:hover {
+    color: #4dd0e1;
+}
+.name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Tel {
+    font-size: 11px;
 }
