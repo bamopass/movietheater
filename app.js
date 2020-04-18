@@ -16,6 +16,8 @@ var movie = require("./routes/movie");
 var welcomeadmin = require("./routes/welcomeadmin");
 var adminregis = require("./routes/adminregis");
 var manageAdmin = require("./routes/manageAdmin");
+var adminaddmovies = require("./routes/adminaddmovies");
+var adminaddseatprice = require("./routes/adminaddseatprice");
 
 
 
@@ -40,14 +42,16 @@ app.use(function(req,res,next){
     })
 
     
-app.use("/",home);
-app.use("/",auth);
+app.use("/", home);
+app.use("/", auth);
 app.use("/", promotion);
 app.use("/", cinema);
 app.use("/", movie);
 app.use("/", welcomeadmin);
 app.use("/", adminregis);
 app.use("/", manageAdmin);
+app.use("/", adminaddmovies)
+app.use("/", adminaddseatprice)
 
 
 

@@ -318,7 +318,7 @@ a.nav-link.active:after {
 /*---------------------
         Cinema
 -----------------------*/
-.cinema {
+.cinema, .manage {
     margin: 0 25px 0 20px;
     border-radius: 3px;
     background-color: white;
@@ -357,3 +357,91 @@ a.nav-link.active:after {
 .Tel {
     font-size: 11px;
 }
+
+/*---------------------
+        Admin
+-----------------------*/
+h3 {
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: 110px;
+    padding-bottom: 90px;
+    
+}
+.manage {
+    text-transform: uppercase;
+    height: 650px;
+    text-align: center;
+}
+
+.manage .manage-btn {
+    background-color:black;
+    border-radius: 3px;
+    color: white;
+    padding: 15px 65px 15px 55px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0px 10px;
+    cursor: pointer;
+    position: relative;
+}
+.manage .manage-btn:hover {
+    background-color: #FFD41F;
+}
+
+.manage .manage-btn:hover .manage-hover {
+	top: 52px;
+	opacity: 1;
+	visibility: visible;
+	z-index: 99;
+}
+
+.manage .manage-btn:before {
+	position: absolute;
+	color: #ffffff;
+	right: 20px;
+	top: 13px;
+	content: "";
+	font-family: FontAwesome;
+	font-size: 18px;
+}
+
+.manage .manage-btn .manage-hover {
+	position: absolute;
+	width: 100%;
+    background: #fff;
+    border: .5px solid #FFD41F;
+	left: 0;
+	margin-top: -1px;
+	opacity: 0;
+	visibility: hidden;
+	padding-bottom: 29px;
+	transition: all 0.5s;
+}
+
+.manage .manage-btn .manage-hover li {
+	list-style: none;
+}
+
+
+.manage .manage-btn .manage-hover li a {
+	display: block;
+	font-size: 13px;
+	color: #000000;
+	margin-left: -16px;
+	padding-top: 16px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.manage .manage-btn .manage-hover li a:hover {
+    color: #FFD41F;
+    text-decoration: none;
+}
+
+
+
+
+
