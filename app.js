@@ -18,6 +18,8 @@ var adminregis = require("./routes/adminregis");
 var manageAdmin = require("./routes/manageAdmin");
 var adminaddmovies = require("./routes/adminaddmovies");
 var adminaddseatprice = require("./routes/adminaddseatprice");
+var time = require("./routes/time");
+var bookingmovies = require("./routes/bookingmovies")
 
 
 
@@ -52,6 +54,8 @@ app.use("/", adminregis);
 app.use("/", manageAdmin);
 app.use("/", adminaddmovies)
 app.use("/", adminaddseatprice)
+app.use("/", time)
+app.use("/", bookingmovies)
 
 
 
