@@ -1,3 +1,386 @@
 
-<h1>"Admin add movie for Jang"</h1>
-<h1>movie Form ja Jang </h1>
+<!DOCTYPE html>
+
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .txtBlue {
+        color: #00d4f1;
+    }
+    .txtWhite {
+        color: white !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+    }
+    .form_margin {
+        margin-top: 20px;
+    }
+    input {
+        border-radius: 18px;
+        border: solid white 1px;
+        color: #00d4f1;
+        padding: 5px 10px 5px 10px;
+        background-color: transparent;
+        outline: 0 none;
+    }
+    textarea {
+        border-radius: 18px;
+        border: solid white 1px;
+        color: #00d4f1;
+        padding: 5px 10px 5px 10px;
+        background-color: transparent;
+        outline: 0 none;
+    }
+    .btn_selector {
+        border: solid white 1px !important;
+        border-radius: 18px !important;
+        text-align: center;
+        cursor: pointer;
+        padding: 2px 10px !important;
+        float: left;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .selected_button {
+        border: solid #00d4f1 1px;
+        background-color: #00d4f1;
+    }
+
+    .selector_style {
+        color: white;
+        background-color: black;
+        padding: 20px;
+        outline: none;
+        border: 0px;
+    }
+
+    .save_btn {
+        background-color: transparent;
+        color: #00d4f1;
+        border: solid #00d4f1 2px;
+        border-radius: 25px;
+        font-size: 20px;
+        margin-right: 15px;
+        outline: none !important;
+    }
+
+    .save_btn:hover {
+        background-color: #00d4f1;
+        color: white;
+        border: solid #00d4f1 2px;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body style="background-color: black;">
+        <div class="container_content" style="margin: 60px 80px;">
+            <div style="margin-bottom: 25px;">
+                <span
+                    style="color: white; font-size: 4vw; font-weight: 600; border-bottom: solid #00d4f1 8px; letter-spacing: 5px; margin-left: 40px;"
+                >
+                    Movie Form
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="margin: 10px auto auto auto;">
+                    <div class="text-center">
+                        <img
+                            src="https://picsum.photos/300/400"
+                            alt=""
+                            style="width: 70%; cursor: pointer;"
+                            onclick="uploadFile();"
+                            id="profile_image"
+                        />
+                        <input type="file" id="my_picture" style="display: none;" />
+                    </div>
+                    <div class="text-center">
+                        <span class="txtBlue" style="font-size: 25px; font-weight: 500;">
+                            Profile Picture
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Movie ID:</div>
+                        <div class="col-4">
+                            <span id="movie_id_text" class="txtWhite">MV0000001</span>
+                        </div>
+                    </div>
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Movie Name</div>
+                        <div class="col-4">
+                            <input type="text" name="movie_name" id="id_movie_name" style="width: 80%;" />
+                        </div>
+                        <div class="col-2 txtWhite">Genres</div>
+                        <div class="col-4">
+                            <input type="text" name="genres" id="id_genres" style="width: 80%;" />
+                        </div>
+                    </div>
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Movie Detail</div>
+                        <div class="col-4">
+                            <textarea
+                                name="movie_detail"
+                                id="id_movie_detail"
+                                style="width: 80%; height: 94px;"
+                                placeholder="type here..."
+                                class="txtBlue"
+                            ></textarea>
+                        </div>
+                        <div class="col-2 txtWhite">
+                            <div class="row" style="padding-left: 15px;">Audio</div>
+                            <div class="row" style="margin-top: 22px; padding-left: 15px;">Movie Rate</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row" style="padding-left: 15px;">
+                                <input type="text" name="audio" id="id_audio" style="width: 77%;" />
+                            </div>
+                            <div class="row" style="margin-top: 22px; padding-left: 15px;">
+                                <input type="text" name="movie_rate" id="id_movie_rate" style="width: 77%;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Movie length</div>
+                        <div class="col-4">
+                            <input type="text" name="movie_length" id="id_movie_length" style="width: 80%;" />
+                        </div>
+                        <div class="col-2 txtWhite">Theater Type</div>
+                        <div class="col-4">
+                            <!--  asdasdasdasd -->
+                            <div id="id_select_2D" class="txtWhite btn_selector noselect" style="width: 50px;" onclick="selectTheater('2D')">
+                                2D
+                            </div>
+                            <div id="id_select_3D" class="txtWhite btn_selector noselect" style="width: 50px;" onclick="selectTheater('3D')">
+                                3D
+                            </div>
+                            <div id="id_select_4DX" class="txtWhite btn_selector noselect" style="width: 60px;" onclick="selectTheater('4DX')">
+                                4DX
+                            </div>
+                            <div id="id_select_IMAX" class="txtWhite btn_selector noselect" style="width: 80px;" onclick="selectTheater('IMAX')">
+                                IMAX
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Starring</div>
+                        <div class="col-4">
+                            <textarea
+                                name="starring"
+                                id="id_starring"
+                                style="width: 80%; height: 94px;"
+                                placeholder="type here..."
+                                class="txtBlue"
+                            ></textarea>
+                        </div>
+                        <div class="col-2 txtWhite">
+                            <div class="row" style="padding-left: 15px;">Theater No.</div>
+                            <div class="row" style="margin-top: 22px; padding-left: 15px;">Branch</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row" style="padding-left: 15px;">
+                                <input type="text" name="theater_number" id="id_theater_number" style="width: 77%;" />
+                            </div>
+                            <div class="row" style="margin-top: 22px; padding-left: 15px;">
+                                <input type="text" name="branch" id="id_branch" style="width: 77%;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_margin">
+                        <div class="col-2 txtWhite">Release Date</div>
+                        <div class="col-4">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Day
+                                </button>
+                                <div class="dropdown-menu day" id="id_day_rd" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Month
+                                </button>
+                                <div class="dropdown-menu month" id="id_month_rd" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Year
+                                </button>
+                                <div class="dropdown-menu year" id="id_year_rd" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-2 txtWhite">End Date</div>
+                        <div class="col-4">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Day
+                                </button>
+                                <div class="dropdown-menu day" id="id_day_ed" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Month
+                                </button>
+                                <div class="dropdown-menu month" id="id_month_ed" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle txtWhite btn_selector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Year
+                                </button>
+                                <div class="dropdown-menu year" id="id_year_ed" style="overflow-y: scroll; max-height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_margin" style="margin-top: 75px;">
+                        <div class="col-8 txtWhite"></div>
+                        <div class="col-4">
+                            <button class="noselect save_btn" style="float: left; width: 25%; margin-left: 111px;">
+                                EDIT
+                            </button>
+                            <button class="noselect save_btn" style="float: left; width: 25%;" onclick="saveForm();">
+                                SAVE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function selectTheater(theater_type) {
+        const selected_elem = document.getElementById("id_select_" + theater_type);
+        if (selected_elem.classList.contains("selected_button")) {
+            selected_elem.classList.remove("selected_button");
+        } else {
+            selected_elem.classList.add("selected_button");
+        }
+    }
+
+    function uploadFile() {
+        document.getElementById("my_picture").click();
+    }
+
+    function changeParentSelectorText(parent_classname, text) {
+        document.getElementsByClassName(parent_classname).parentNode.querySelector("button").innerText = text;
+    }
+
+    function saveForm() {
+        const movie_name = document.getElementById("id_movie_name").value;
+        const genre = document.getElementById("id_genres").value;
+        const movie_detail = document.getElementById("id_movie_detail").value;
+        const audio = document.getElementById("id_audio").value;
+        const movie_rate = document.getElementById("id_movie_rate").value;
+        const movie_length = document.getElementById("id_movie_length").value;
+
+        const theater_type = [];
+        if (document.getElementById("id_select_2D").classList.contains("selected_button")) {
+            theater_type.push("2D");
+        }
+        if (document.getElementById("id_select_3D").classList.contains("selected_button")) {
+            theater_type.push("3D");
+        }
+        if (document.getElementById("id_select_4DX").classList.contains("selected_button")) {
+            theater_type.push("4DX");
+        }
+        if (document.getElementById("id_select_IMAX").classList.contains("selected_button")) {
+            theater_type.push("IMAX");
+        }
+
+        const starring = document.getElementById("id_starring").value;
+        const theater_number = document.getElementById("id_theater_number").value;
+        const branch = document.getElementById("id_branch").value;
+
+        const my_image_path = document.getElementById("my_picture").value;
+        let form_obj = {
+            movie_detail: movie_detail,
+            audio: audio,
+            movie_rate: movie_rate,
+            theater_type: theater_type,
+            movie_name: movie_name,
+            genre: genre,
+            movie_length: movie_length,
+            starring: starring,
+            theater_number: theater_number,
+            branch: branch,
+        };
+        console.log(form_obj);
+    }
+</script>
