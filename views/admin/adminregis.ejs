@@ -106,7 +106,7 @@
     </head>
 
     <body style="background-color: black;">
-        <form class="register-box" action="/regis" method="POST">
+        <form class="register-box" action="/adminregis" method="POST">
         <div class="container_content" style="margin: 80px 80px;">
             <div style="margin-bottom: 25px;">
                 <span
@@ -219,18 +219,18 @@
                             <div class="btn-group">
                             <select name="DOBMonth" required>
                                 <option>- Month -</option>
-                                <option value="January">January</option>
-                                <option value="Febuary">Febuary</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="May">May</option>
-                                <option value="June">June</option>
-                                <option value="July">July</option>
-                                <option value="August">August</option>
-                                <option value="September">September</option>
-                                <option value="October">October</option>
-                                <option value="November">November</option>
-                                <option value="December">December</option>
+                                <option value="01">January</option>
+                                <option value="02">Febuary</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
                             </select>
                             </div>
                             <div class="btn-group">
@@ -351,25 +351,24 @@
                             <input type="text" name="branch" id="id_branch" style="width: 80%;" />
                         </div>
                     </div> -->
+
                     <div class="row form_margin">
                         <div class="col-2 txtWhite">Position</div>
                         <div class="col-4">
                             <select name="position" required>
                                 <option>- Position -</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Employee">Employee</option>
+                                <% positions.forEach(function(position){ %>
+                                    <option value="<%=position.positionID%>"><%=position.JobPosition%></option>
+                                <% }); %>
                             </select>
                         </div>
                         <div class="col-2 txtWhite">Branch</div>
                         <div class="col-4">
                             <select name="branch" required>
                                 <option>- Branch -</option>
-                                <option value="Rama2">Major Cineplex Central Rama 2 </option>
-                                <option value="Rama3">Major Cineplex Central Rama 3</option>
-                                <option value="Quartier">Quartier Cineart</option>
-                                <option value="Paragon">Patagon Cineplex</option>
-                                <option value="Pinklao">Major Cineplex Pinklao</option>
-                                <option value="icon">Icon Cineconic</option>
+                                <% branchs.forEach(function(branch){ %>
+                                    <option value="<%=branch.branchID%>"><%=branch.branchName%></option>
+                                <% }); %>
                             </select>
                         </div>
                     </div>
@@ -389,6 +388,3 @@
             </form>
         </body>
     </html>
-    
-    
-    

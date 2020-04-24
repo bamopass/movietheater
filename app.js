@@ -7,17 +7,20 @@ var expressSanitizer = require("express-sanitizer");
 
 
 
-//requring route
+//customer route
 var home = require("./routes/home");
 var auth = require("./routes/auth");
 var promotion = require("./routes/promotion");
 var cinema = require("./routes/cinema");
 var movie = require("./routes/movie");
-var welcomeadmin = require("./routes/welcomeadmin");
-var adminregis = require("./routes/adminregis");
-var manageAdmin = require("./routes/manageAdmin");
-var adminaddmovies = require("./routes/adminaddmovies");
-var adminaddseatprice = require("./routes/adminaddseatprice");
+//admin route
+var welcomeadmin = require("./routes/admin/welcomeadmin");
+var adminregis = require("./routes/admin/adminAuth");
+var manageAdmin = require("./routes/admin/manageAdmin");
+var adminaddmovies = require("./routes/admin/adminaddmovies");
+var adminaddseatprice = require("./routes/admin/adminaddseatprice");
+
+
 var time = require("./routes/time");
 var bookingmovies = require("./routes/bookingmovies")
 
@@ -40,6 +43,7 @@ app.use(expressSanitizer());
 app.use(function(req,res,next){
     res.locals.currentUser_email = req.session.email;
     res.locals.currentUser_firstName = req.session.firstname;
+    res.locals.currentAdmin = req.session.adminEmail;
     next();
     })
 

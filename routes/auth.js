@@ -57,7 +57,8 @@ router.post("/regis", function (req, res) {
     var DOBYear = req.body.DOBYear;
     var gender = req.body.gender;
 
-    var sql = "INSERT INTO Member(firstName,lastName,gender,citizenID,phone,email,password,dd,mm,yyyy) values ('" + firstname + "','" + lastname + "','" + gender + "','" + citizen_id + "','" + phone + "','" + email + "','" + password + "','" + DOBDay + "','" + DOBMonth + "','" + DOBYear + "')";
+    var memberstatusID = 1;
+    var sql = "INSERT INTO Member(fName,LName,gender,citizenID,phone,email,password,dd,mm,yyyy,memberstatusID) values ('" + firstname + "','" + lastname + "','" + gender + "','" + citizen_id + "','" + phone + "','" + email + "','" + password + "','" + DOBDay + "','" + DOBMonth + "','" + DOBYear + "','" + memberstatusID + "')";
     connection.query(sql, function (err, result) {
         if (err) {
             throw err;
@@ -70,32 +71,6 @@ router.post("/regis", function (req, res) {
     })
 })
 
-router.post("/adminregis", function (req, res) {
-    var firstname = req.body.firstname;
-    var lastname = req.body.lastname;
-    var citizen_id = req.body.citizen_id;
-    var phone = req.body.phonenumber;
-    var email = req.body.email;
-    var password = req.body.password;
-    var DOBDay = req.body.DOBDay;
-    var DOBMonth = req.body.DOBMonth;
-    var DOBYear = req.body.DOBYear;
-    var gender = req.body.gender;
-    var position = req.body.position;
-    var branch = req.body.branch;
-
-    var sql = "INSERT INTO Employee(firstName,lastName,gender,citizenID,phone,email,password,dd,mm,yyyy, position, branch) values ('" + firstname + "','" + lastname + "','" + gender + "','" + citizen_id + "','" + phone + "','" + email + "','" + password + "','" + DOBDay + "','" + DOBMonth + "','" + DOBYear + "','" + position + "','" + branch + "')";
-    connection.query(sql, function (err, result) {
-        if (err) {
-            throw err;
-        } else {
-            console.log("Insert Complete");
-            req.session.email = email;
-            req.session.firstname = firstname;1
-            res.redirect("/manageAdmin");
-        }
-    })
-})
 
 
 
